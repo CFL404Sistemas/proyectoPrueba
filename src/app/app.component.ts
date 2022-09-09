@@ -7,23 +7,17 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'test';
+
   @ViewChild('intro') intro: ElementRef | any;
 
-  soyUnColor: boolean = false;
-  public scrollToIntro() {
-    this.intro.nativeElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest'
-    });
+
+
+  ngOnInit(): void {
+    console.log(this.intro);
 
 
   }
 
-  cambiarColor() {
-
-    this.soyUnColor = true;
-  }
 
   vamosABerisso() {
 

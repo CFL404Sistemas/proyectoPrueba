@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light misEstilos"> <!-- Navbar de Boostrap, la clase misEstilos es Nuestra! esta en app.component.scss -->
+<!-- <nav class="navbar navbar-expand-lg bg-light misEstilos"> 
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Fabian Cagliardi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav correrElementos">
                 <li class="nav-item">
-                <button mat-raised-button>Sobre Mí</button> <!--Los botones son de material! -->
+                <button (click)="scrollToIntro();"mat-raised-button>Sobre Mí</button> 
                 </li>
                 <li class="nav-item">
                 <button mat-raised-button>Experiencia</button>
@@ -18,31 +18,36 @@
                 <li class="nav-item">
                 <button mat-raised-button>Contacto</button>
                 </li>
-                <li class="nav-item">
-                    <button mat-raised-button>ContactoX</button>
-                    </li>
             </ul>
         </div>
     </div>
 </nav>
+ -->
+<app-navbar [referenciaSeccion]="intro"></app-navbar>
+
+
 
 
 <div class="container-fluid"> <!--Contenedor -->
     <div class="row"> <!-- Fila -->
         <div class="col-md-12 text-center"> <!-- Columna de 12 y la clase de boostrap text-center para centrar -->
-            <div    (click)="cambiarColor();" [ngClass]="{'cambiarColor': soyUnColor}">
-                <!-- Rounded es de boostrap, y fotoCagliardi es nuestra, esta en app.component.scss -->
-                <img class="rounded fotoCagliardi" src="https://pbs.twimg.com/profile_images/1130928598934872065/vk7hU1AE_400x400.jpg">
-            </div>
+
+            <!-- Rounded es de boostrap, y fotoCagliardi es nuestra, esta en app.component.scss -->
+            <div class="animate__animated animate__backInRight" >
+                <img class="rounded fotoCagliardi" src="../assets/cag.png">
+            </div>-
         </div>
     </div>
 
     <div class="row"> <!-- Fila -->
 
-        <div class="col-md-12 text-center"> <!-- Columna de 12 y la clase text-center para centrar -->
-            <p class="nombrePersonalizado fs-3">Fabian Cagliardi</p>
-            <p class="fw-normal fs-4">Intendente de Berisso</p>
-        </div>
+            <div class="col-md-12 text-center"> <!-- Columna de 12 y la clase text-center para centrar -->
+                <div class="animate__animated animate__backInUp" >
+
+                    <p class="nombrePersonalizado fs-3">Fabian Cagliardi</p>
+                    <p class="fw-normal fs-4">Intendente de Berisso</p>
+                </div>
+            </div>
     </div>
 
     <div class="row"> <!-- Fila -->
@@ -64,7 +69,7 @@
                     <!-- Boton con la funcion vamosABerisso que nos abre una pagina, logica en app.component.ts -->
                 <button (click)="vamosABerisso();" mat-fab color="warn" aria-label="Example icon button with a home icon">
                     <!-- En vez de un icono de boostrap, ponemos una imagen con nuestra clase cagIcon para reducir el tamaño -->
-                    <img class="rounded cagIcon" src="https://pbs.twimg.com/profile_images/1130928598934872065/vk7hU1AE_400x400.jpg">
+                    <img class="rounded cagIcon" src="../assets/cag.png">
                 </button>
 
                 <button mat-fab color="warn" aria-label="Example icon button with a home icon">
@@ -90,80 +95,10 @@
     </div>
 </div>
 
+<div #intro>
+    <app-seccion-informacion></app-seccion-informacion>
 
-
-<div class="container-fluid"> <!-- Container -->
-    <mat-card class="miTarjetita"> <!--  Tarjeta con nuestra clase Mi tarjetita es nuestra clase-->
-        <div class="row "> <!-- Row  -->
-
-            <div class="col-md-6"> <!-- Col -->
-
-                <p class="fw-bold">About Me</p> <!-- Clase de boostrap fw-bold para poner negrita -->
-
-                From a young age, I’ve always had a sense of motivation and passion driving me forward. Whether it’s exploring unique opportunities, learning additional skills, or meeting new people, I bring these values to every experience throughout my life on a personal and professional level.
-
-                Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.
-
-                To learn more about me, keep exploring my site or reach out directly.
-
-
-            </div>
-
-            <div class="col-md-6">
-                <p class="fw-bold">Basic Information: <span class="fw-normal"> PEPE</span></p> <!-- P es para textos, fw-bold pone en negrita y luego span pone un texto en la misma linea con fw-normal (sin negrita) -->
-                <p class="fw-bold">DATE OF BIRTH: <span class="fw-normal"> PEDRO</span></p>
-                <p class="fw-bold">Email: <span class="fw-normal"> PEDRO</span></p>
-                <p class="fw-bold">DATE OF BIRTH: <span class="fw-normal"> PEDRO</span></p>
-                <p class="fw-bold">DATE OF BIRTH: <span class="fw-normal"> PEDRO</span></p>
-            </div>
-
-        </div>
-    </mat-card>
-
-    <div class="separarSeccion"> <!-- separarSeccion es nuestra, se usa para alejar un poco de arriba-->
-        <div class="row"> <!-- row -->
-            <div class="col-md-12 text-center"> <!-- col con text-center para centrar -->
-                
-                <p class="fw-bold fs-1">Mi Experiencia</p>
-
-            </div>
-
-        </div>
-
-        <mat-card class="miTarjetita">
-            <div class="row text-center">
-    
-                <div class="col-md-6">
-    
-                    <p class="fw-bold">About Me</p>
-    
-                    From a young age, I’ve always had a sense of motivation and passion driving me forward. Whether it’s exploring unique opportunities, learning additional skills, or meeting new people, I bring these values to every experience throughout my life on a personal and professional level.
-    
-                    Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.
-    
-                    To learn more about me, keep exploring my site or reach out directly.
-    
-    
-                </div>
-    
-                <div class="col-md-6">
-                    <p class="fw-bold">Basic Information: <span class="fw-normal"> PEPE</span></p>
-                    <p class="fw-bold">DATE OF BIRTH: <span class="fw-normal"> PEDRO</span></p>
-                    <p class="fw-bold">Email: <span class="fw-normal"> PEDRO</span></p>
-                    <p class="fw-bold">DATE OF BIRTH: <span class="fw-normal"> PEDRO</span></p>
-                    <p class="fw-bold">DATE OF BIRTH: <span class="fw-normal"> PEDRO</span></p>
-                </div>
-    
-            </div>
-        </mat-card>
-    
-
-        
-    </div>
 </div>
-
-
-
 
 
 
@@ -181,7 +116,7 @@
 
   
 
-<div #intro style="margin-top:55%;margin-bottom:15%;">
+<div style="margin-top:55%;margin-bottom:15%;">
 
     <div class="container-fluid">
       <mat-card class="sombra"> <!-- La tarjeta con envuelve la row -->
@@ -215,6 +150,47 @@
     
   </div>
   
+  
+  
+  
+  
+
+  
+<div #intro2 style="margin-top:55%;margin-bottom:15%;">
+
+    <div class="container-fluid">
+      <mat-card class="sombra"> <!-- La tarjeta con envuelve la row -->
+        <div class="row" > 
+          <div class="col-md-6"> <!-- Primera sección de la tarjeta -->
+            
+            <p class="fw-bold">About Me.  <span class="fw-normal"> aca</span></p>
+  
+            From a young age, I’ve always had a sense of motivation and passion driving me forward. Whether it’s exploring unique opportunities, learning additional skills, or meeting new people, I bring these values to every experience throughout my life on a personal and professional level.
+            
+            Lover of innovation and everything related to generate new knowledge.Face problems with a smile and solve them as soon as possible. Very calculated about the time I spend and work I do.
+            
+            To learn more about me, keep exploring my site or reach out directly.
+          </div>
+          <div class="col-md-6"> <!-- Segunda sección de la tarjeta -->
+            Basic Information
+            DATE OF BIRTH:
+            June 14, 1994
+            EMAIL:
+            punithraaj14@gmail
+            MOBILE NO:
+            8088041006
+            ADDRESS:
+            #397 ashoka road vidyanagr Hassan
+            LANGUAGE:
+            Kannada, English, Hindi, Telugu
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    
+  </div>
+
+  <app-contact></app-contact>
   
   
   
