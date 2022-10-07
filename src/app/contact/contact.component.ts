@@ -9,15 +9,12 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class ContactComponent implements OnInit {
   loginForm: FormGroup | any;
 
-
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-
-
     this.loginForm = this.formBuilder.group({
       email: ["", [Validators.email, Validators.required]],
-      password: [
+      mensaje: [
         "",
         [
           Validators.required,
@@ -25,17 +22,15 @@ export class ContactComponent implements OnInit {
       ]
     });
   }
-
-
   onLogin() {
 
+    console.log(this.loginForm);
 
     if (this.loginForm.valid == true) {
-      alert('INGRESO TODO BIEN');
-    } else {
 
-      alert('INGRESO ALGO MAL');
-
+      /* alert(); */
+      window.open('https://wa.me/' + 2213543668 + '?text=' + this.loginForm.value.mensaje + 'Este es mi Email:' + this.loginForm.value.email, '_blank');
     }
+
   }
 }

@@ -1,32 +1,32 @@
-
-  <form >
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <mat-form-field class="example-full-width">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" >
-        </mat-form-field>
-<!--         <div *ngIf="loginForm.controls.email.errors" class="text-danger">
-          <div *ngIf="loginForm.controls.email.errors.email">El email debe ser valido.</div>
-          <div *ngIf="loginForm.controls.email.errors.required">Se necesita un email.</div>
-        </div> -->
+<form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+      <div *ngIf="loginForm.controls.email.errors" class="text-danger">
+        <div *ngIf="loginForm.controls.email.errors.email">El email debe ser valido.</div>
+        <div *ngIf="loginForm.controls.email.errors.required">Se necesita un email.</div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password">
-        </mat-form-field>
-<!--         <div *ngIf="loginForm.controls.password.errors" class="text-danger">
-          <div *ngIf="loginForm.controls.password.errors.required">Password es necesario.</div>
-        </div> -->
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Mensaje</mat-label>
+        <input matInput type="text" formControlName="mensaje">
+      </mat-form-field>
+      <div *ngIf="loginForm.controls.mensaje.errors" class="text-danger">
+        <div *ngIf="loginForm.controls.mensaje.errors.required">Mensaje es necesario.</div>
       </div>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <button disabled="{{loginForm.controls.valid}}" mat-raised-button type="submit" color="primary">Ingresar</button>
-      </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button mat-raised-button type="submit" color="primary">Ingresar</button>
     </div>
-  </form>
+  </div>
+</form>
+  
