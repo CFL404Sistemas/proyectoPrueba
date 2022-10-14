@@ -11,15 +11,18 @@ import { MatCardModule } from '@angular/material/card';
 import { SeccionInformacionComponent } from './seccion-informacion/seccion-informacion.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { SeccionFotoComponent } from './seccion-foto/seccion-foto.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     SeccionInformacionComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    SeccionFotoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule
 
 
   ],

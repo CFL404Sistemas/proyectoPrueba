@@ -6,21 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Input() referenciaSeccion: any;
-
-
-
+  @Input() seccionInfo: any;
+  @Input() seccionContacto: any;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.referenciaSeccion);
-
-
   }
 
-
-  scrollToIntro() {
-    this.referenciaSeccion.scrollIntoView({
+  scrollHaciaInfo() {
+    this.seccionInfo.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'nearest'
@@ -28,6 +22,15 @@ export class NavbarComponent implements OnInit {
     );
 
 
+  }
+
+  scrollHaciaContacto() {
+    this.seccionContacto.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    }
+    );
   }
 
 }

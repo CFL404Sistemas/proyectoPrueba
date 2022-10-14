@@ -7,13 +7,13 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  loginForm: FormGroup | any;
+  formularioDeContacto: FormGroup | any;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ["", [Validators.email, Validators.required]],
+    this.formularioDeContacto = this.formBuilder.group({
+      nombre: ["", [Validators.required]],
       mensaje: [
         "",
         [
@@ -22,14 +22,15 @@ export class ContactComponent implements OnInit {
       ]
     });
   }
-  onLogin() {
+  alEnviarMensaje() {
 
-    console.log(this.loginForm);
 
-    if (this.loginForm.valid == true) {
+    if (this.formularioDeContacto.valid == true) {
 
-      /* alert(); */
-      window.open('https://wa.me/' + 2213543668 + '?text=' + this.loginForm.value.mensaje + 'Este es mi Email:' + this.loginForm.value.email, '_blank');
+      window.open('https://wa.me/' + 2213543668 + '?text=Hola, mi nombre es '
+        + this.formularioDeContacto.value.nombre +
+        '. Me quiero contactar con vos por lo siguiente:'
+        + this.formularioDeContacto.value.mensaje, '_blank');
     }
 
   }

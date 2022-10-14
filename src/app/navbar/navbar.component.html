@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav correrElementos">
                 <li class="nav-item">
-                <button (click)="scrollToIntro();"mat-raised-button>Sobre Mí</button> <!--Los botones son de material! -->
+                <button (click)="scrollHaciaInfo();"mat-raised-button>Sobre Mí</button> <!--Los botones son de material! -->
                 </li>
                 <li class="nav-item">
                 <button mat-raised-button>Experiencia</button>
@@ -16,7 +16,7 @@
                 <button mat-raised-button>Habilidades</button>
                 </li>
                 <li class="nav-item">
-                <button mat-raised-button>Contacto</button>
+                <button (click)="scrollHaciaContacto();" mat-raised-button>Contacto</button>
                 </li>
             </ul>
         </div>
